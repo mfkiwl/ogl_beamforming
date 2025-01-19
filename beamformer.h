@@ -163,12 +163,15 @@ typedef struct {
 	u32                  compute_stages_count;
 	b32                  upload;
 	b32                  export_next_frame;
+	v4                   abcd_plane;
 	c8                   export_pipe_name[1024];
 } BeamformerParametersFull;
 
 #define CS_UNIFORMS                             \
 	X(CS_DAS,     volume_export_dim_offset) \
 	X(CS_DAS,     volume_export_pass)       \
+	X(CS_DAS,     view_plane_transform)     \
+	X(CS_DAS,     view_region_transform)    \
 	X(CS_DAS,     cycle_t)                  \
 	X(CS_MIN_MAX, mips_level)               \
 	X(CS_SUM,     sum_prescale)
